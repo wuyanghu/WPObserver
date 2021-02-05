@@ -1,0 +1,6 @@
+framework module Pods_WPObserver_Example {
+  umbrella header "Pods-WPObserver_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

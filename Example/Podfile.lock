@@ -1,0 +1,16 @@
+PODS:
+  - WPObserver (0.1.0)
+
+DEPENDENCIES:
+  - WPObserver (from `../`)
+
+EXTERNAL SOURCES:
+  WPObserver:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WPObserver: 76fad33cabac7fb7bbc1608b5b262b0e87a27e6f
+
+PODFILE CHECKSUM: 94efe53d3d27929c81d5da7bcc60a7d6269e75a8
+
+COCOAPODS: 1.9.1

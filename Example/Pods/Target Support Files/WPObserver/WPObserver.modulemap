@@ -1,0 +1,6 @@
+framework module WPObserver {
+  umbrella header "WPObserver-umbrella.h"
+
+  export *
+  module * { export * }
+}
