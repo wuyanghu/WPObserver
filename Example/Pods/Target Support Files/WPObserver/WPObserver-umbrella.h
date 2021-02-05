@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "NSObject+WPObserver.h"
 
 FOUNDATION_EXPORT double WPObserverVersionNumber;
 FOUNDATION_EXPORT const unsigned char WPObserverVersionString[];

@@ -22,6 +22,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		733669C7F9DF565862368751 /* Pods_WPObserver_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2F268128FF48242798BAD9 /* Pods_WPObserver_Example.framework */; };
+		7650C47025CD7E4300B4346F /* WPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7650C46F25CD7E4300B4346F /* WPView.m */; };
+		7650C47A25CD811400B4346F /* WPViewObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7650C47925CD811400B4346F /* WPViewObserver.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A9B7DA93F93421FD9B9215F3 /* Pods_WPObserver_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6801DA22D786760AF73EAB0 /* Pods_WPObserver_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		3A2F268128FF48242798BAD9 /* Pods_WPObserver_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WPObserver_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53F586D1D651814ABDBFFBA5 /* WPObserver.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WPObserver.podspec; path = ../WPObserver.podspec; sourceTree = "<group>"; };
+		53F586D1D651814ABDBFFBA5 /* WPObserver.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WPObserver.podspec; path = ../WPObserver.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* WPObserver_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPObserver_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,12 +62,17 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		63F99E5BF9D851CA455E5B1E /* Pods-WPObserver_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPObserver_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WPObserver_Tests/Pods-WPObserver_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7650C46E25CD7E4300B4346F /* WPView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPView.h; sourceTree = "<group>"; };
+		7650C46F25CD7E4300B4346F /* WPView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPView.m; sourceTree = "<group>"; };
+		7650C47525CD7F7000B4346F /* WPProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPProtocol.h; sourceTree = "<group>"; };
+		7650C47825CD811400B4346F /* WPViewObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPViewObserver.h; sourceTree = "<group>"; };
+		7650C47925CD811400B4346F /* WPViewObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPViewObserver.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		88E56F16444EFFA619A3B112 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		88E56F16444EFFA619A3B112 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AB7BE9EC412AEB439B1A96CB /* Pods-WPObserver_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPObserver_Tests.release.xcconfig"; path = "Target Support Files/Pods-WPObserver_Tests/Pods-WPObserver_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CFA7242B2AF70072DC083AF1 /* Pods-WPObserver_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPObserver_Example.debug.xcconfig"; path = "Target Support Files/Pods-WPObserver_Example/Pods-WPObserver_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DC0A716B5B09F703A46960A1 /* Pods-WPObserver_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPObserver_Example.release.xcconfig"; path = "Target Support Files/Pods-WPObserver_Example/Pods-WPObserver_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E03CC4511466763F6177708F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E03CC4511466763F6177708F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F6801DA22D786760AF73EAB0 /* Pods_WPObserver_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WPObserver_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +144,11 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* WPViewController.h */,
 				6003F5A6195388D20070C39A /* WPViewController.m */,
+				7650C46E25CD7E4300B4346F /* WPView.h */,
+				7650C46F25CD7E4300B4346F /* WPView.m */,
+				7650C47825CD811400B4346F /* WPViewObserver.h */,
+				7650C47925CD811400B4346F /* WPViewObserver.m */,
+				7650C47525CD7F7000B4346F /* WPProtocol.h */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -193,7 +205,6 @@
 				63F99E5BF9D851CA455E5B1E /* Pods-WPObserver_Tests.debug.xcconfig */,
 				AB7BE9EC412AEB439B1A96CB /* Pods-WPObserver_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +269,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -365,7 +377,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* WPAppDelegate.m in Sources */,
+				7650C47A25CD811400B4346F /* WPViewObserver.m in Sources */,
 				6003F5A7195388D20070C39A /* WPViewController.m in Sources */,
+				7650C47025CD7E4300B4346F /* WPView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
