@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WPObserver'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '一对多封装'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
                        
-  s.homepage         = 'https://github.com/wuyanghu/WPObserver.git'
+  s.homepage         = 'https://github.com/wuyanghu/WPObserver'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '823105162@qq.com' => '823105162@qq.com' }
