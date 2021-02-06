@@ -46,18 +46,49 @@ if ([self.multiDelegate hasDelegateThatRespondsToSelector:@selector(enterpriseMa
 4. 方法不存在，不需要外部判断。内部打印错误日志，注意观察。
 
 # 使用
-1. 需要观察的地方导入头文件
+1. 导入头文件
 \#import "NSObject+BLObserver.h"
 2. 添加观察者
-[BLClientKitConversation bl_addObserver:self];
-3. 调用
-[self bl_notifyObserverWithAction:@selector(conversationManager:didChangedWithConversations:), self, self.conversations];
+```
+[_customView wp_addObserver:self];
+    
+    _observer1 = [WPViewObserver new];
+    _observer1.title = @"observer1 ";
+    [_customView wp_addObserver:_observer1];
+    
+    _observer2 = [WPViewObserver new];
+    _observer2.title = @"observer2 ";
+    [_customView wp_addObserver:_observer2 delegateQueue:dispatch_queue_create("observer2", DISPATCH_QUEUE_SERIAL)];//指定队列
+```
+3. 被观察者通知观察者:带参数调用
+```
+    [self wp_notifyObserverWithAction:@selector(update), nil];
+    [self wp_notifyObserverWithAction:@selector(update:), 1,nil];
+    [self wp_notifyObserverWithAction:@selector(update:count2:), 1,2,nil];
+```
+4. 观察者监听
+```
+- (void)update:(NSInteger)count{
+    NSLog(@"detail update %ld",count);
+}
+
+- (void)update:(NSInteger)count count2:(NSInteger)count2{
+    NSLog(@"detail update %ld,%ld",count,count2);
+}
+```
+5. 退出页面后内存自动释放
+```
+2021-02-06 23:18:16.655618+0800 WPObserver_Example[58471:640255] WPDetailViewController dealloc
+2021-02-06 23:18:16.656013+0800 WPObserver_Example[58471:640255] WPViewObserver dealloc observer2
+2021-02-06 23:18:16.656214+0800 WPObserver_Example[58471:640255] WPViewObserver dealloc observer1
+2021-02-06 23:18:16.656621+0800 WPObserver_Example[58471:640255] WPView dealloc
+```
 
 # 总结
 1. 多数监听的或移除的时候都是在主线程，如果觉得线程不安全，也可以加个信号量。
 2. 观察者模式使用简单，要考虑到通用性，多参问题。
 3. 多参要考虑到int,double等基本类型。
-4. NSPointerArray不持有观察者，不需要释放。只管监听，和通知观察者。如果有特殊情况，不需要监听了，可以调用[self.bl_observers removePointerAtIndex:<#(NSUInteger)#>]，移除监听，注意下标。
+4. weak不持有观察者，不需要释放。只管监听，和通知观察者。如果有特殊情况，不需要监听了，可以调用[wp_removeObserver]，移除监听，注意下标。
 
 ## Installation
 
