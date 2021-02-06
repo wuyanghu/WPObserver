@@ -7,11 +7,17 @@
 //
 
 #import "WPAppDelegate.h"
+#import "WPViewController.h"
 
 @implementation WPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[WPViewController new]];
+
     // Override point for customization after application launch.
     return YES;
 }

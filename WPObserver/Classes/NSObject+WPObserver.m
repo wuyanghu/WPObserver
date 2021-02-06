@@ -13,39 +13,48 @@
 
 #pragma mark - 关联对象
 
-- (NSPointerArray *)wp_observers{
-    NSPointerArray * observers = objc_getAssociatedObject(self, _cmd);
+- (NSMutableArray *)wp_observers{
+    NSMutableArray * observers = objc_getAssociatedObject(self, _cmd);
     if (!observers) {
-        observers = [[NSPointerArray alloc] initWithOptions:NSPointerFunctionsWeakMemory];
+        observers = [[NSMutableArray alloc] init];
         objc_setAssociatedObject(self, @selector(wp_observers), observers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return observers;
 }
 
-- (dispatch_queue_t)wp_delegateQueue{
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)setWp_delegateQueue:(dispatch_queue_t _Nonnull)bl_delegateQueue{
-    objc_setAssociatedObject(self, @selector(wp_delegateQueue), bl_delegateQueue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 #pragma mark - 添加移除观察者
 
-- (void)wp_addObserver:(id)delegate{
-    [self.wp_observers addPointer:(__bridge void * _Nullable)(delegate)];
+- (void)wp_addObserver:(id)observer{
+    WPObserverModel * observerModel = [[WPObserverModel alloc] initWithObserver:observer];
+    [self.wp_observers addObject:observerModel];
 }
 
-- (void)wp_addObserver:(id)delegate delegateQueue:(dispatch_queue_t)queue{
-    self.wp_delegateQueue = queue;
-    [self.wp_observers addPointer:(__bridge void * _Nullable)(delegate)];
+- (void)wp_addObserver:(id)observer delegateQueue:(dispatch_queue_t)queue_t{
+    NSAssert(observer != nil, @"observer 不能为nil");
+    WPObserverModel * observerModel = [[WPObserverModel alloc] initWithObserver:observer queue_t:queue_t];
+    [self.wp_observers addObject:observerModel];
+}
+
+- (void)wp_removeObserver:(id)observer{
+    if (!observer) {
+        return;
+    }
+    
+    NSMutableArray * delObservers = [[NSMutableArray alloc] init];
+    for (WPObserverModel * model in self.wp_observers) {
+        if (model.observer == observer) {
+            [delObservers addObject:model];
+        }
+    }
+    [self.wp_observers removeObjectsInArray:delObservers];
 }
 
 #pragma mark - 通知观察者
 
 - (void)wp_notifyObserverWithAction:(SEL)sel,...{
 
-    for (id observer in self.wp_observers) {
+    for (WPObserverModel * observerModel in self.wp_observers) {
+        id observer = observerModel.observer;
         if ([observer respondsToSelector:sel]) {
             NSMethodSignature * sig = [observer methodSignatureForSelector:sel];
             if (!sig) {
@@ -68,8 +77,8 @@
             [self wp_setInv:inv withSig:sig andArgs:args];
             va_end(args);
             
-            if (self.wp_delegateQueue) {
-                dispatch_async(self.wp_delegateQueue, ^{
+            if (observerModel.queue_t) {
+                dispatch_async(observerModel.queue_t, ^{
                     [inv invoke];
                 });
             }else{

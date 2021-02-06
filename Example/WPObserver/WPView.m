@@ -8,27 +8,29 @@
 
 #import "WPView.h"
 #import "NSObject+WPObserver.h"
-
+#import "WPButtonFactory.h"
 @implementation WPView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"计数+1" forState:UIControlStateNormal];
-        [self addSubview:button];
-        
-        button.frame = CGRectMake(100, 200, 100, 40);
-        button.backgroundColor = [UIColor redColor];
-        [button addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+        UIButton * notifyBtn = [WPButtonFactory createButton:@"通知" frame:CGRectMake(100, 250, 100, 40)];
+        [self addSubview:notifyBtn];
+        [notifyBtn addTarget:self action:@selector(notifyBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
 
-- (void)clickAction:(UIButton *)button{
+- (void)notifyBtnAction:(UIButton *)button{
     [self wp_notifyObserverWithAction:@selector(update), nil];
     [self wp_notifyObserverWithAction:@selector(update:), 1,nil];
     [self wp_notifyObserverWithAction:@selector(update:count2:), 1,2,nil];
 }
+
+- (void)dealloc{
+    NSLog(@"WPView dealloc");
+}
+
+
 
 @end

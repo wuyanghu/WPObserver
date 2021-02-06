@@ -7,14 +7,10 @@
 //
 
 #import "WPViewController.h"
-#import "NSObject+WPObserver.h"
-#import "WPView.h"
-#import "WPProtocol.h"
-#import "WPViewObserver.h"
+#import "WPDetailViewController.h"
+#import "WPButtonFactory.h"
+@interface WPViewController ()
 
-@interface WPViewController ()<WPViewObserver>
-@property (nonatomic,strong) WPView * customView;
-@property (nonatomic,strong) WPViewObserver * observer1;
 @end
 
 @implementation WPViewController
@@ -23,25 +19,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _customView = [[WPView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:_customView];
-    
-    _observer1 = [WPViewObserver new];
-    
-    [_customView wp_addObserver:_observer1];
-    [_customView wp_addObserver:self];
+    UIButton * countBtn = [WPButtonFactory createButton:@"跳转" frame:CGRectMake(100, 200, 100, 40)];
+    [self.view addSubview:countBtn];
+    [countBtn addTarget:self action:@selector(pushDetailViewController) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)update{
-    NSLog(@"update");
-}
-
-- (void)update:(NSInteger)count{
-    NSLog(@"update %ld",count);
-}
-
-- (void)update:(NSInteger)count count2:(NSInteger)count2{
-    NSLog(@"update %ld,%ld",count,count2);
+//我就在这里做个跳转了
+- (void)pushDetailViewController{
+    WPDetailViewController * detail = [[WPDetailViewController alloc] init];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

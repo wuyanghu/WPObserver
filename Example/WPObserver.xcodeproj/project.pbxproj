@@ -24,6 +24,8 @@
 		733669C7F9DF565862368751 /* Pods_WPObserver_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2F268128FF48242798BAD9 /* Pods_WPObserver_Example.framework */; };
 		7650C47025CD7E4300B4346F /* WPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7650C46F25CD7E4300B4346F /* WPView.m */; };
 		7650C47A25CD811400B4346F /* WPViewObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7650C47925CD811400B4346F /* WPViewObserver.m */; };
+		767E44A625CEE361004E1F7B /* WPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 767E44A525CEE361004E1F7B /* WPDetailViewController.m */; };
+		767E44AB25CEEA28004E1F7B /* WPButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 767E44AA25CEEA28004E1F7B /* WPButtonFactory.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A9B7DA93F93421FD9B9215F3 /* Pods_WPObserver_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6801DA22D786760AF73EAB0 /* Pods_WPObserver_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,10 @@
 		7650C47525CD7F7000B4346F /* WPProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPProtocol.h; sourceTree = "<group>"; };
 		7650C47825CD811400B4346F /* WPViewObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPViewObserver.h; sourceTree = "<group>"; };
 		7650C47925CD811400B4346F /* WPViewObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPViewObserver.m; sourceTree = "<group>"; };
+		767E44A425CEE361004E1F7B /* WPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPDetailViewController.h; sourceTree = "<group>"; };
+		767E44A525CEE361004E1F7B /* WPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPDetailViewController.m; sourceTree = "<group>"; };
+		767E44A925CEEA28004E1F7B /* WPButtonFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPButtonFactory.h; sourceTree = "<group>"; };
+		767E44AA25CEEA28004E1F7B /* WPButtonFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPButtonFactory.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88E56F16444EFFA619A3B112 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AB7BE9EC412AEB439B1A96CB /* Pods-WPObserver_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPObserver_Tests.release.xcconfig"; path = "Target Support Files/Pods-WPObserver_Tests/Pods-WPObserver_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +150,12 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* WPViewController.h */,
 				6003F5A6195388D20070C39A /* WPViewController.m */,
+				767E44A425CEE361004E1F7B /* WPDetailViewController.h */,
+				767E44A525CEE361004E1F7B /* WPDetailViewController.m */,
 				7650C46E25CD7E4300B4346F /* WPView.h */,
 				7650C46F25CD7E4300B4346F /* WPView.m */,
+				767E44A925CEEA28004E1F7B /* WPButtonFactory.h */,
+				767E44AA25CEEA28004E1F7B /* WPButtonFactory.m */,
 				7650C47825CD811400B4346F /* WPViewObserver.h */,
 				7650C47925CD811400B4346F /* WPViewObserver.m */,
 				7650C47525CD7F7000B4346F /* WPProtocol.h */,
@@ -376,7 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767E44A625CEE361004E1F7B /* WPDetailViewController.m in Sources */,
 				6003F59E195388D20070C39A /* WPAppDelegate.m in Sources */,
+				767E44AB25CEEA28004E1F7B /* WPButtonFactory.m in Sources */,
 				7650C47A25CD811400B4346F /* WPViewObserver.m in Sources */,
 				6003F5A7195388D20070C39A /* WPViewController.m in Sources */,
 				7650C47025CD7E4300B4346F /* WPView.m in Sources */,

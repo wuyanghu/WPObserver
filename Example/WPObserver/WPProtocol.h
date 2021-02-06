@@ -10,6 +10,7 @@
 #define WPProtocol_h
 
 @protocol WPViewObserver <NSObject>
+@optional
 - (void)update;
 - (void)update:(NSInteger)count;
 - (void)update:(NSInteger)count count2:(NSInteger)count;

@@ -10,16 +10,29 @@
 
 @implementation WPViewObserver
 
-- (void)update{
-    NSLog(@"WPViewObserver update");
+- (void)pushDetailViewController{
+    NSLog(@"WPViewObserver update %@",_title);
+    [self printThreadName];
 }
 
 - (void)update:(NSInteger)count{
-    NSLog(@"WPViewObserver update %ld",count);
+    NSLog(@"WPViewObserver update %ld,%@",count,_title);
+    [self printThreadName];
 }
 
 - (void)update:(NSInteger)count count2:(NSInteger)count2{
-    NSLog(@"WPViewObserver update %ld,%ld",count,count2);
+    NSLog(@"WPViewObserver update %ld,%ld,%@",count,count2,_title);
+    [self printThreadName];
+}
+
+- (void)printThreadName{
+    if (![NSThread isMainThread]) {
+        NSLog(@"%@-%@",_title,[NSThread currentThread]);
+    }
+}
+
+- (void)dealloc{
+    NSLog(@"WPViewObserver dealloc %@",_title);
 }
 
 @end
