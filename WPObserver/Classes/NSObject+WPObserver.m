@@ -71,6 +71,7 @@
                 [self doesNotRecognizeSelector:sel];
                 continue;;
             }
+            [inv retainArguments];
             [inv setTarget:observer];
             [inv setSelector:sel];
 
@@ -93,6 +94,7 @@
 }
 
 - (void)wp_setInv:(NSInvocation *)inv withSig:(NSMethodSignature *)sig andArgs:(va_list)args {
+    
     NSUInteger count = [sig numberOfArguments];
     for (int index = 2; index < count; index++) {
         char *type = (char *)[sig getArgumentTypeAtIndex:index];
@@ -267,7 +269,7 @@ else if (size <= 4 * _size_ ) { \
 
         }
     }
-    
+
 }
 
 - (void)wp_asyncMainSafeBlock:(void(^)(void))block{
@@ -281,3 +283,4 @@ else if (size <= 4 * _size_ ) { \
 }
 
 @end
+
