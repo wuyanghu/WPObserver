@@ -88,7 +88,7 @@ if ([self.multiDelegate hasDelegateThatRespondsToSelector:@selector(enterpriseMa
 1. 多数监听的或移除的时候都是在主线程，如果觉得线程不安全，也可以加个信号量。
 2. 观察者模式使用简单，要考虑到通用性，多参问题。
 3. 多参要考虑到int,double等基本类型。
-4. weak不持有观察者，不需要释放。只管监听，和通知观察者。如果有特殊情况，不需要监听了，可以调用[wp_removeObserver]，移除监听，注意下标。
+4. weak不持有观察者，不需要释放。只管监听，和通知观察者。如果有特殊情况，不需要监听了，可以调用[wp_removeObserver]，移除监听;单例的监听者，需要手动移除。
 
 ## Installation
 
