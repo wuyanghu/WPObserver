@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)wp_notifyObserverWithAction:(SEL)action,...NS_REQUIRES_NIL_TERMINATION;//可变参数
 
-//移除:观察者对象释放，默认不用移除；不想监听时可调用此方法移除。
+//移除:观察者对象释放，默认不用移除；不想监听时可调用此方法移除;监听单例需要移除。
 //考虑到观察者数量不会太大，直接使用数组方法移除
 - (void)wp_removeObserver:(id)observer;
 @end

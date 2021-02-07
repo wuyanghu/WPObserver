@@ -30,7 +30,6 @@
 }
 
 - (void)wp_addObserver:(id)observer delegateQueue:(dispatch_queue_t)queue_t{
-    NSAssert(observer != nil, @"observer 不能为nil");
     WPObserverModel * observerModel = [[WPObserverModel alloc] initWithObserver:observer queue_t:queue_t];
     [self.wp_observers addObject:observerModel];
 }
@@ -39,13 +38,13 @@
     if (!observer) {
         return;
     }
-    
     NSMutableArray * delObservers = [[NSMutableArray alloc] init];
-    for (WPObserverModel * model in self.wp_observers) {
-        if (model.observer == observer) {
+    for (WPObserverModel * model in self.wp_observers.copy) {
+        if (model.observer == observer || !model.observer) {
             [delObservers addObject:model];
         }
     }
+    
     [self.wp_observers removeObjectsInArray:delObservers];
 }
 
@@ -53,8 +52,11 @@
 
 - (void)wp_notifyObserverWithAction:(SEL)sel,...{
 
-    for (WPObserverModel * observerModel in self.wp_observers) {
+    for (WPObserverModel * observerModel in self.wp_observers.copy) {
         id observer = observerModel.observer;
+        if (!observer) {
+            continue;
+        }
         if ([observer respondsToSelector:sel]) {
             NSMethodSignature * sig = [observer methodSignatureForSelector:sel];
             if (!sig) {
