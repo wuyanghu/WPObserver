@@ -14,6 +14,8 @@
 - (void)update;
 - (void)update:(NSInteger)count;
 - (void)update:(NSInteger)count count2:(NSInteger)count;
+- (void)updateTitle:(NSString *)title count:(NSInteger)count;
+
 @end
 
 #endif /* WPProtocol_h */

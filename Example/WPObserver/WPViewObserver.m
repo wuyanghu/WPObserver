@@ -25,6 +25,10 @@
     [self printThreadName];
 }
 
+- (void)updateTitle:(NSString *)title count:(NSInteger)count{
+    NSLog(@"%@-%ld",title,count);
+}
+
 - (void)printThreadName{
     if (![NSThread isMainThread]) {
         NSLog(@"%@-%@",_title,[NSThread currentThread]);

@@ -25,6 +25,8 @@
     [self wp_notifyObserverWithAction:@selector(update), nil];
     [self wp_notifyObserverWithAction:@selector(update:), 1,nil];
     [self wp_notifyObserverWithAction:@selector(update:count2:), 1,2,nil];
+    [self wp_notifyObserverWithAction:@selector(updateTitle:count:), @"1",3,nil];
+    [self wp_notifyObserverWithAction:@selector(updateTitle:count:), nil,4,nil];
 }
 
 - (void)dealloc{
