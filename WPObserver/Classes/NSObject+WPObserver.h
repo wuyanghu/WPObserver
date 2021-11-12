@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "WPObserverModel.h"
+#import "WPObserver.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (WPObserver)
+@property (nonatomic,strong) WPObserver * proxyObserver;
 @property(nonatomic, strong,readonly) NSMutableArray * wp_observers;
 
 //默认主队列

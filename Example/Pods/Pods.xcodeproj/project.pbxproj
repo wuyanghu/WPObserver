@@ -15,6 +15,10 @@
 		44F3A7EA785B2DF0BCD2975AF88C3787 /* Pods-WPObserver_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CDF53C9C2A70445D30E7A6510212B /* Pods-WPObserver_Tests-dummy.m */; };
 		46FFC2EAD0D43F28099C723415825033 /* NSObject+WPObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7EA595935A893CEBC634239C3ED195 /* NSObject+WPObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B00992F0256FC9EBCCB0A290E7CB481 /* Pods-WPObserver_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53B104544DA6CA98B1963819F160602B /* Pods-WPObserver_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7606A2C7273E3189002687F9 /* WPProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7606A2C5273E3189002687F9 /* WPProxy.h */; };
+		7606A2C8273E3189002687F9 /* WPProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606A2C6273E3189002687F9 /* WPProxy.m */; };
+		7606A2CB273E32EB002687F9 /* WPObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7606A2C9273E32EB002687F9 /* WPObserver.h */; };
+		7606A2CC273E32EB002687F9 /* WPObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606A2CA273E32EB002687F9 /* WPObserver.m */; };
 		87D22010146FA565E7D3F006F891250D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		93B8EC2FAA0A67B63832CB2304437822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		ACD03FCEB67FB664F796779FA35A5439 /* Pods-WPObserver_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C5752B0CB75147C39C00F7EDDEA44C /* Pods-WPObserver_Example-dummy.m */; };
@@ -40,8 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14F8AC0C0946B8382710A3B5618108B3 /* WPObserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WPObserver.framework; path = WPObserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15C68565E8DF43808E1047EC2F3C07E6 /* Pods_WPObserver_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WPObserver_Example.framework; path = "Pods-WPObserver_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14F8AC0C0946B8382710A3B5618108B3 /* WPObserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WPObserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C68565E8DF43808E1047EC2F3C07E6 /* Pods_WPObserver_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WPObserver_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B61E65E8BD04135249384C71697AF10 /* Pods-WPObserver_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WPObserver_Tests-umbrella.h"; sourceTree = "<group>"; };
 		2D5E441AD632BB9D544445B7C636F9EF /* Pods-WPObserver_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WPObserver_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -50,7 +54,7 @@
 		3E24261381765168AFF15D347996F0E3 /* WPObserver-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WPObserver-umbrella.h"; sourceTree = "<group>"; };
 		43EA281DC4F724109CF01796BFB2A68F /* Pods-WPObserver_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WPObserver_Tests.modulemap"; sourceTree = "<group>"; };
 		47B1F4E5D9686E98E8439F8A90DE6AE2 /* Pods-WPObserver_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WPObserver_Example-frameworks.sh"; sourceTree = "<group>"; };
-		5150041B4BC899208463A2A88696F9DC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5150041B4BC899208463A2A88696F9DC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		53B104544DA6CA98B1963819F160602B /* Pods-WPObserver_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WPObserver_Example-umbrella.h"; sourceTree = "<group>"; };
 		60CDFE5ED1D87C9034B9261BE5DC4431 /* Pods-WPObserver_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WPObserver_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		62813F57AA19A99E1792039C97939B39 /* Pods-WPObserver_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WPObserver_Example-Info.plist"; sourceTree = "<group>"; };
@@ -59,17 +63,21 @@
 		6B7BD75E8CD0C0A2BFC832B8B6A366B3 /* WPObserver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WPObserver.debug.xcconfig; sourceTree = "<group>"; };
 		6D7D91DB20F5B413F1CF49B55823F051 /* Pods-WPObserver_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WPObserver_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		71936200ACD54EFB489E3B9C952F9FAC /* Pods-WPObserver_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WPObserver_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7606A2C5273E3189002687F9 /* WPProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WPProxy.h; path = WPObserver/Classes/WPProxy.h; sourceTree = "<group>"; };
+		7606A2C6273E3189002687F9 /* WPProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WPProxy.m; path = WPObserver/Classes/WPProxy.m; sourceTree = "<group>"; };
+		7606A2C9273E32EB002687F9 /* WPObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WPObserver.h; path = WPObserver/Classes/WPObserver.h; sourceTree = "<group>"; };
+		7606A2CA273E32EB002687F9 /* WPObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WPObserver.m; path = WPObserver/Classes/WPObserver.m; sourceTree = "<group>"; };
 		926276393BDC712F184D4090E920A289 /* WPObserverModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WPObserverModel.h; path = WPObserver/Classes/WPObserverModel.h; sourceTree = "<group>"; };
 		92FFB862858E1C6FBD9BF513830D3AFE /* NSObject+WPObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+WPObserver.m"; path = "WPObserver/Classes/NSObject+WPObserver.m"; sourceTree = "<group>"; };
 		940FE64BFD30D3D54C37CD25766F37DB /* WPObserver-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WPObserver-Info.plist"; sourceTree = "<group>"; };
 		94ACFE87C90D48CD2177702723975E43 /* WPObserver-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WPObserver-prefix.pch"; sourceTree = "<group>"; };
-		981BBD46FD04E3D3E3FCB78F95FF8C3A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		981BBD46FD04E3D3E3FCB78F95FF8C3A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9A67BFA0E40EE3FB49518086C6C8464C /* WPObserver-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WPObserver-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD7EA595935A893CEBC634239C3ED195 /* NSObject+WPObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+WPObserver.h"; path = "WPObserver/Classes/NSObject+WPObserver.h"; sourceTree = "<group>"; };
-		BB9D31E6D2A5D3E8542DCC38AA53CDCF /* Pods_WPObserver_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WPObserver_Tests.framework; path = "Pods-WPObserver_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB9D31E6D2A5D3E8542DCC38AA53CDCF /* Pods_WPObserver_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WPObserver_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80346C5742E621F254BF47D19CD992D /* WPObserver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WPObserver.release.xcconfig; sourceTree = "<group>"; };
-		D064E67B1CDB43041042634FD673AA93 /* WPObserver.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WPObserver.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D064E67B1CDB43041042634FD673AA93 /* WPObserver.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WPObserver.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D4BC3F8ADC9410D8E50C5BC158B6135B /* WPObserverModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WPObserverModel.m; path = WPObserver/Classes/WPObserverModel.m; sourceTree = "<group>"; };
 		D4C5752B0CB75147C39C00F7EDDEA44C /* Pods-WPObserver_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WPObserver_Example-dummy.m"; sourceTree = "<group>"; };
 		D624B55EE52AF0B6C13B8E68C2D55448 /* Pods-WPObserver_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WPObserver_Tests-Info.plist"; sourceTree = "<group>"; };
@@ -128,6 +136,10 @@
 				92FFB862858E1C6FBD9BF513830D3AFE /* NSObject+WPObserver.m */,
 				926276393BDC712F184D4090E920A289 /* WPObserverModel.h */,
 				D4BC3F8ADC9410D8E50C5BC158B6135B /* WPObserverModel.m */,
+				7606A2C9273E32EB002687F9 /* WPObserver.h */,
+				7606A2CA273E32EB002687F9 /* WPObserver.m */,
+				7606A2C5273E3189002687F9 /* WPProxy.h */,
+				7606A2C6273E3189002687F9 /* WPProxy.m */,
 				A7FFDCEB3BEBE7EDB6BA9DA6CC20E9C3 /* Pod */,
 				623F24AC987583FF1D97AC44FE8EA637 /* Support Files */,
 			);
@@ -255,7 +267,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7606A2C7273E3189002687F9 /* WPProxy.h in Headers */,
 				46FFC2EAD0D43F28099C723415825033 /* NSObject+WPObserver.h in Headers */,
+				7606A2CB273E32EB002687F9 /* WPObserver.h in Headers */,
 				42E77590064CEE02F3774CD816256265 /* WPObserver-umbrella.h in Headers */,
 				42F2572AF0DA5875353E4431B5F821EF /* WPObserverModel.h in Headers */,
 			);
@@ -379,6 +393,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0AD29BDC0002B928DFC21D1E3B07F1C /* NSObject+WPObserver.m in Sources */,
+				7606A2C8273E3189002687F9 /* WPProxy.m in Sources */,
+				7606A2CC273E32EB002687F9 /* WPObserver.m in Sources */,
 				35716DE64F734F0E80C4E3FB74776C2A /* WPObserver-dummy.m in Sources */,
 				0D75C2035C17C568DF3062D9541724B8 /* WPObserverModel.m in Sources */,
 			);
@@ -568,8 +584,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
