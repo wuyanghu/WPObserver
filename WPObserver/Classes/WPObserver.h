@@ -26,4 +26,8 @@ typedef void(^WPObserverBlock)(id target);
 - (void)notifyObserver:(WPObserverBlock)observerBlock selector:(SEL)aSelector;
 @end
 
+@interface NSObject (WPProxyObserver)
+@property (nonatomic,strong,readonly) WPObserver * proxyObserver;
+@end
+
 NS_ASSUME_NONNULL_END

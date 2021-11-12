@@ -7,6 +7,7 @@
 
 #import "WPObserver.h"
 #import "WPProxy.h"
+#import <objc/runtime.h>
 
 @interface WPObserver()
 @property(nonatomic, strong) NSMutableArray<WPProxy *> * proxyObservers;
@@ -82,6 +83,22 @@
     }
     
     dispatch_semaphore_signal(self.semaphore_t);
+}
+
+@end
+
+
+@implementation NSObject (WPProxyObserver)
+
+#pragma mark - 关联对象
+
+- (WPObserver *)proxyObserver{
+    WPObserver * observers = objc_getAssociatedObject(self, _cmd);
+    if (!observers) {
+        observers = [[WPObserver alloc] init];
+        objc_setAssociatedObject(self, @selector(proxyObserver), observers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return observers;
 }
 
 @end

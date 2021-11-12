@@ -1,5 +1,5 @@
 PODS:
-  - WPObserver (0.1.2)
+  - WPObserver (0.1.5)
 
 DEPENDENCIES:
   - WPObserver (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WPObserver: 37a613a572d991917e516436edd3573b3424e0d8
+  WPObserver: 646e9d4e86ec1342c705069a9858bf07e6008cae
 
 PODFILE CHECKSUM: 94efe53d3d27929c81d5da7bcc60a7d6269e75a8
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.2

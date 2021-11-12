@@ -22,15 +22,6 @@
     return observers;
 }
 
-- (WPObserver *)proxyObserver{
-    WPObserver * observers = objc_getAssociatedObject(self, _cmd);
-    if (!observers) {
-        observers = [[WPObserver alloc] init];
-        objc_setAssociatedObject(self, @selector(proxyObserverproxyObserver), observers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return observers;
-}
-
 #pragma mark - 添加移除观察者
 
 - (void)wp_addObserver:(id)observer{

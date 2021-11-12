@@ -11,7 +11,9 @@
 #endif
 
 #import "NSObject+WPObserver.h"
+#import "WPObserver.h"
 #import "WPObserverModel.h"
+#import "WPProxy.h"
 
 FOUNDATION_EXPORT double WPObserverVersionNumber;
 FOUNDATION_EXPORT const unsigned char WPObserverVersionString[];

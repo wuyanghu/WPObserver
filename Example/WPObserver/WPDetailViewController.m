@@ -10,6 +10,7 @@
 #import "WPView.h"
 #import "NSObject+WPObserver.h"
 #import "WPViewObserver.h"
+#import "WPObserver.h"
 
 @interface WPDetailViewController()<WPViewObserver>
 @property (nonatomic,strong) WPView * customView;
@@ -26,15 +27,29 @@
     _customView = [[WPView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_customView];
     
-    [_customView wp_addObserver:self];
-    
     _observer1 = [WPViewObserver new];
     _observer1.title = @"observer1 ";
-    [_customView wp_addObserver:_observer1];
     
     _observer2 = [WPViewObserver new];
     _observer2.title = @"observer2 ";
+    
+    
+//    [self addObserver1];
+    [self addObserver2];
+}
+
+//方案一
+- (void)addObserver1{
+    [_customView wp_addObserver:self];
+    [_customView wp_addObserver:_observer1];
     [_customView wp_addObserver:_observer2 delegateQueue:dispatch_queue_create("observer2", DISPATCH_QUEUE_SERIAL)];//指定队列
+}
+
+//方案二
+- (void)addObserver2{
+    [_customView.proxyObserver addObserver:self];
+    [_customView.proxyObserver addObserver:_observer1];
+    [_customView.proxyObserver addObserver:_observer2 delegateQueue:dispatch_queue_create("observer2", DISPATCH_QUEUE_SERIAL)];//指定队列
 }
 
 - (void)update:(NSInteger)count{
