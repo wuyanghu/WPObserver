@@ -33,8 +33,8 @@ iOS delegate、block属于一对一的模式。
 }
 
 if ([self.multiDelegate hasDelegateThatRespondsToSelector:@selector(enterpriseManager:didClearAllOrgs:)]) {
-                        [self.multiDelegate enterpriseManager:self didClearAllOrgs:YES];
-                    }
+    [self.multiDelegate enterpriseManager:self didClearAllOrgs:YES];
+}
 ```
 
 # 思考
@@ -45,7 +45,8 @@ if ([self.multiDelegate hasDelegateThatRespondsToSelector:@selector(enterpriseMa
 3. 如果不设置队列，默认都回到主线程；也可指定队列。
 4. 方法不存在，不需要外部判断。内部打印错误日志，注意观察。
 
-# 使用
+# 方案一
+##使用
 1. 导入头文件
 \#import "NSObject+BLObserver.h"
 2. 添加观察者
@@ -84,11 +85,46 @@ if ([self.multiDelegate hasDelegateThatRespondsToSelector:@selector(enterpriseMa
 2021-02-06 23:18:16.656621+0800 WPObserver_Example[58471:640255] WPView dealloc
 ```
 
-# 总结
+## 小结
 1. 多数监听的或移除的时候都是在主线程，如果觉得线程不安全，也可以加个信号量。
 2. 观察者模式使用简单，要考虑到通用性，多参问题。
 3. 多参要考虑到int,double等基本类型。
 4. weak不持有观察者，不需要释放。只管监听，和通知观察者。如果有特殊情况，不需要监听了，可以调用[wp_removeObserver]，移除监听;单例的监听者，需要手动移除。
+
+
+# 方案二
+以上方案可以实现通知，调用wp_notifyObserverWithAction:，不支持泛型。
+方案二去掉多参，加上线程安全，支持泛型。
+
+## 使用
+1. 添加观察者
+```
+- (void)addObserver2{
+    [_customView.proxyObserver addObserver:self];
+    [_customView.proxyObserver addObserver:_observer1];
+    [_customView.proxyObserver addObserver:_observer2 delegateQueue:dispatch_queue_create("observer2", DISPATCH_QUEUE_SERIAL)];//指定队列
+}
+```
+2. 通知观察者，支持泛型
+```
+[self.proxyObserver notifyObserver:^(id<WPViewObserver>  _Nonnull target) {
+    [target update];
+} selector:@selector(update)];
+
+[self.proxyObserver notifyObserver:^(id<WPViewObserver>  _Nonnull target) {
+    [target update:1];
+} selector:@selector(update:)];
+
+[self.proxyObserver notifyObserver:^(id<WPViewObserver>  _Nonnull target) {
+    [target update:1 count2:2];
+} selector:@selector(update:count2:)];
+
+[self.proxyObserver notifyObserver:^(id<WPViewObserver>  _Nonnull target) {
+    [target updateTitle:@"标题" count:4];
+} selector:@selector(updateTitle:count:)];
+```
+
+
 
 ## Installation
 
